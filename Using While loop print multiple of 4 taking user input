@@ -1,0 +1,15 @@
+import java.util.*;
+
+class Main {
+	public static void main(String args[]) {
+		// Your code goes here
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int i = 4;
+
+		while(i<= n) {
+			System.out.println(i);
+			i = i+4;
+		}
+	}
+}
