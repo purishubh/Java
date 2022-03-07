@@ -1,0 +1,31 @@
+import java.util.*;
+class Main {
+	// Function to add row values for 2d array
+	static void add2dArrayRow(int[][] M){
+		int r = M.length;
+		int c = M[0].length;
+
+		for(int i=0; i<c; i++){
+			int sum = 0;
+			for(int j=0; j<r; j++){
+				sum += M[j][i];
+			}
+			System.out.println(sum);
+		}
+	}
+
+	public static void main(String args[]) {
+		// Your code goes here
+		Scanner sc = new Scanner(System.in);
+		int R = sc.nextInt();
+		int C = sc.nextInt();
+		int[][] arr = new int[R][C];
+
+		for(int i=0; i<R; i++){
+			for(int j=0; j<C; j++){
+				arr[i][j] = sc.nextInt();
+			}
+		}
+		add2dArrayRow(arr);
+	}
+}
