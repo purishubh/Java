@@ -1,31 +1,31 @@
   import java.util.*;
 class Main {
-	static void print2D(int[][] M){
-		int r = M.length;
-		int c = M[0].length;
+	static void print2D(int[][] M){ // creating function with 2d array parameter to print 2d array
+		int r = M.length; // getting length of row
+		int c = M[0].length; // getting length of column
 
-		for(int i=0; i<r; i++){
-			for(int j=0; j<c; j++){
-				System.out.print(M[i][j] + " ");
+		for(int i=0; i<r; i++){ // outer loop for row iterations
+			for(int j=0; j<c; j++){ // inner loop for column iteration
+				System.out.print(M[i][j] + " "); // print 2d array with space
 			}
-			System.out.println();
+			System.out.println(); // for after priniting each row new line
 		}
 	}
 
 
 	public static void main(String args[]) {
 		// Your code goes here
-		Scanner sc = new Scanner(System.in);
-		int R = sc.nextInt();
-		int C = sc.nextInt();
-		int[][] arr = new int[R][C];
+		Scanner sc = new Scanner(System.in); 
+		int R = sc.nextInt(); // getting input for number of rows
+		int C = sc.nextInt(); // getting input for number of column
+		int[][] arr = new int[R][C]; // define new 2d array to read inputs array
 
-		for(int i=0; i<R; i++){
-			for(int j=0; j<C; j++){
-				arr[i][j] = sc.nextInt();
+		for(int i=0; i<R; i++){ // outer loop for row 
+			for(int j=0; j<C; j++){ // outer loop for column
+				arr[i][j] = sc.nextInt(); // getting input 2d array values to new defined 2d array 'arr'
 			}
 		}
-		print2D(arr);
+		print2D(arr); // calling function and passing 2d array parameter
 
 	}
 }
