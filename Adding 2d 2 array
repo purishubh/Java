@@ -1,0 +1,49 @@
+import java.util.*;
+
+class Main {
+ // Function to 
+	static void add2d2array(int[][] M1, int[][] M2){
+		int r = M1.length;
+		int c = M1[0].length;
+		int[][] res = new int[r][c];
+
+		for(int i=0; i<r; i++){
+			for(int j=0; j<c; j++){
+				res[i][j] = M1[i][j] + M2[i][j];
+				
+			}
+		}
+
+		for(int k=0; k<r; k++){
+			for(int l=0; l<c; l++){
+				System.out.print(res[k][l] + " ");
+			}
+			System.out.println();
+		}
+		
+	}
+
+	public static void main(String args[]) {
+		// Your code goes here
+		Scanner sc = new Scanner(System.in);
+		int r = sc.nextInt();
+		int c = sc.nextInt();
+		int[][] arr1 = new int[r][c];
+		int[][] arr2 = new int[r][c];
+
+		for(int i=0; i<r; i++){
+			for(int j=0; j<c; j++){
+				arr1[i][j] = sc.nextInt();
+			}
+		}
+
+		for(int i=0; i<r; i++){
+			for(int j=0; j<c; j++){
+				arr2[i][j] = sc.nextInt();
+			}
+		}
+		add2d2array(arr1, arr2);
+	}
+}
+
+
