@@ -1,0 +1,20 @@
+import java.util.*;
+
+class Main {
+	public static void main(String args[]) {
+		// Your code goes here
+		ArrayList<Integer> arrLst = new ArrayList<Integer>();
+		//System.out.println(arrLst.size());
+
+		arrLst.add(10);
+		arrLst.add(20);
+		arrLst.add(30);
+		arrLst.add(40);
+		//System.out.println(arrLst.size());
+
+		for(int i=0; i<arrLst.size(); i++){
+			System.out.println(arrLst.get(i));
+		}
+
+	}
+}
