@@ -1,0 +1,31 @@
+  import java.util.*;
+class Main {
+	static void print2D(int[][] M){
+		int r = M.length;
+		int c = M[0].length;
+
+		for(int i=0; i<r; i++){
+			for(int j=0; j<c; j++){
+				System.out.print(M[i][j] + " ");
+			}
+			System.out.println();
+		}
+	}
+
+
+	public static void main(String args[]) {
+		// Your code goes here
+		Scanner sc = new Scanner(System.in);
+		int R = sc.nextInt();
+		int C = sc.nextInt();
+		int[][] arr = new int[R][C];
+
+		for(int i=0; i<R; i++){
+			for(int j=0; j<C; j++){
+				arr[i][j] = sc.nextInt();
+			}
+		}
+		print2D(arr);
+
+	}
+}
