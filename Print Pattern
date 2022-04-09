@@ -1,0 +1,16 @@
+import java.util.*;
+class Main {
+	public static void main(String args[]) {
+		// Your code goes here
+		Scanner sc = new Scanner(System.in); 
+		int r = sc.nextInt(); // getting input integer value define number of row
+
+		for(int i=1; i<=r; i++){ // outer loop to print row
+			for(int j=1; j<=r-i+1; j++){ // inner loop to print column
+				System.out.print("*"+ " "); // print * with space
+			}
+			System.out.println(); // jump to next line 
+		}
+    
+	}
+}
