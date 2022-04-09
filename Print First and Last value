@@ -1,0 +1,35 @@
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+
+	static int firstDigit(int s){ // method return first digit
+		while(s>=10){ // check given value ig greater than 10
+			s /= 10; // 
+		}
+		return s;
+	}
+
+	static int lastDigit(int s){
+		return s%10;
+	}
+
+    public static void main(String[] args) {
+        // YOUR CODE GOES HERE
+        // Please take input and print output to standard input/output (stdin/stdout)
+        // DO NOT USE ARGUMENTS FOR INPUTS
+        // E.g. 'Scanner' for input & 'System.out' for output
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+
+        for(int j=0; j<N; j++){
+            int q = sc.nextInt();
+			//int len = q.length();
+			//System.out.println("Check: "+len);
+
+			System.out.print(firstDigit(q) + " ");
+			System.out.println(lastDigit(q));
+
+        }
+    }
+}
