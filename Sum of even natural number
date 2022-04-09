@@ -1,0 +1,23 @@
+import java.util.*;
+class Main {
+	public static void main(String args[]) {
+		// Your code goes here
+		Scanner sc = new Scanner(System.in); 
+		int N = sc.nextInt(); // getting input integer value
+		int x = sc.nextInt();
+		int result = 0; // integer variable to store the addition of natural number till input value
+
+		for(int i=1; i<=N; i++){ // outer loop 
+			if(i%2 == 0){ 
+				System.out.print(i +" "); 
+				result += i; //adding values to result variable
+			}
+
+			if(result > x){ // resullt greater than x input then out of the loop
+				break;
+			}
+			
+		}
+		System.out.println(result); // printing output
+	}
+}
