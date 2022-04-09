@@ -1,0 +1,23 @@
+import java.util.*;
+class Main {
+
+	static int reverseDigit(int pData){
+		int result = 0; // integer variable to store reverse data
+
+		while(pData>0){ // loop on integer
+			result = result*10; // adding place to concatinate digit
+			result = result + pData%10; // getting last digit from data
+			pData = pData/10; // removing last digit from data
+		}
+		return result; // return reverse data
+	}
+
+	public static void main(String args[]) {
+		// Your code goes here
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt(); // getting input data 
+
+		System.out.print(reverseDigit(N)); // printing and calling reverseDigit method and passing data which needs to be reverse
+
+	}
+}
