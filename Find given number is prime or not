@@ -2,21 +2,24 @@ import java.util.*;
 class Main {
 	public static void main(String args[]) {
 		// Your code goes here
-		Scanner sc = new Scanner(System.in);
-		int N = sc.nextInt();
-		int count = 0;
+		Scanner sc = new Scanner(System.in); 
+		int N = sc.nextInt(); // taking input in N varialble
+		int count = 0; // Integer varialble define and assign zero value
 
-		for(int i=1; i<=N; i++){
-			if(N%i == 0){
-				count++;
+		for(int i=1; i<=N; i++){ // outer loop
+			if(N%i == 0){ // checking factor
+				count++; // increment the count by 1
+			}
+			if(count > 2){ // if count is greater than 2 means not a prime number and hence don't need to continue loop
+				break; // out of the loop
 			}
 		}
 
-		if(count == 2){
-			System.out.print("Prime");
+		if(count == 2){ // checking if count is equals to 2 means its a prime number
+			System.out.print("Prime"); // printing string
 		}
 		else{
-			System.out.print("Not Prime");
+			System.out.print("Not Prime"); // prnting string
 		}
 	}
 }
