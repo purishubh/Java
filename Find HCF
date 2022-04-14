@@ -1,0 +1,33 @@
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+
+    static void printHCF(int A, int B){ // method
+        int i = 1; 
+        int res = 0; // integer variable which store the result
+       while(i<=A){ // condition to loop till A times or we can enter B times also, optional
+           if(A%i == 0 && B%i == 0){ // if in both condition remainder is 0 then it is HCF
+               res = i; // store in res valriable;
+           }
+           i++; // increment i value by 1
+       }
+       System.out.println(res); // print last value coz we are findinf HCF(Highest common factor)
+    }
+
+    public static void main(String[] args) {
+        // YOUR CODE GOES HERE
+        // Please take input and print output to standard input/output (stdin/stdout)
+        // DO NOT USE ARGUMENTS FOR INPUTS
+        // E.g. 'Scanner' for input & 'System.out' for output
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+
+        for(int i=1; i<=T; i++){ // outer loop
+            int A = sc.nextInt(); // integer to get first value
+            int B = sc.nextInt(); // integer to get second value
+
+            printHCF(A,B); // method to call and pring HCF
+        }
+    }
+}
