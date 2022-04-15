@@ -1,0 +1,28 @@
+import java.lang.*;
+import java.util.*;
+
+class Main {
+
+	static int printGCD(int A, int B){
+		if(A==0 || B==0){ // check point A or B values 0
+			if(A==0) return B; // if A = 0 then return B value
+			else{
+				return A; // else return A value
+			}
+		}
+		else{
+			// Here uses Euclid's Algorithm
+			if(A%B == 0) return B; 
+			return printGCD(B, A%B); // recursive function used here
+		}
+	}
+
+	public static void main(String args[]) {
+		// Your code goes here
+		 Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt(); // input
+		int m = sc.nextInt(); // input
+		
+		System.out.println(printGCD(n,m)); // passing 2 parameter 
+	}
+}
