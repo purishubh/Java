@@ -1,0 +1,45 @@
+import java.lang.*;
+import java.util.*;
+class Main {
+
+	static void swapArray(int[] a, int[] b){
+		int[] temp = a;
+		a = b;
+		b = temp;
+
+		for(int i=0; i<a.length; i++){
+			System.out.print(a[i]+" ");
+		}
+		System.out.println();
+		for(int j=0; j<b.length; j++){
+			System.out.print(b[j]+" ");
+		}
+	}
+
+	public static void main(String args[]) {
+		// Your code goes here
+		Scanner sc = new Scanner(System.in);
+		int[] a = new int[5];
+		int[] b = new int[5];
+
+		for(int i=0; i<5; i++){
+			a[i] = sc.nextInt();
+		}
+		for(int j=0; j<5; j++){
+			b[j] = sc.nextInt();
+		}
+
+		for(int k=0; k<5; k++){
+			System.out.print(a[k]+" ");
+		}
+		System.out.println();
+		for(int l=0; l<5; l++){
+			System.out.print(b[l]+" ");
+		}
+		System.out.println();
+		System.out.println("Swapping Array:");
+
+		swapArray(a,b);
+		
+	}
+}
