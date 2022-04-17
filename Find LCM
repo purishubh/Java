@@ -1,0 +1,33 @@
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+
+    static int findLCM(int a, int b){
+		int h = 1; 
+		for(int i=1; i<=a; i++){ // outer loop
+			if(a%i == 0 && b%i ==0){ // condition check for both input value is divisible by i value then h value become i
+				h = i;
+			}
+		}
+		//System.out.println("h: "+h);
+		int LCMVal = (a*b)/h; // formula to convert GCD to LCM
+		//System.out.println("GCD: "+gcdVal); 
+
+        return LCMVal; // return 
+	}
+
+   
+    public static void main(String[] args) {
+        // YOUR CODE GOES HERE
+        // Please take input and print output to standard input/output (stdin/stdout)
+        // DO NOT USE ARGUMENTS FOR INPUTS
+        // E.g. 'Scanner' for input & 'System.out' for output
+        Scanner sc = new Scanner(System.in);
+        int A = sc.nextInt(); // Input value
+        int B = sc.nextInt(); // Input value
+
+        int LCMResult = findLCM(A,B); // return value stored in integer value
+        System.out.println(LCMResult); // print GCD value
+    }
+}
