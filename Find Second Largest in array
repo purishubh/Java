@@ -1,0 +1,73 @@
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+
+    public static void findLargestAndSecondLargestVal(int[] a){
+        int aLen = a.length;
+	
+        if(validateError(a)){
+            System.out.print("NA");
+        }
+        else{
+            int greaterVal = a[0];
+
+            for(int j=0; j<aLen; j++){
+                if(greaterVal < a[j]){
+                    greaterVal = a[j];
+                }
+            }
+            //System.out.println("Largest val: "+greaterVal);
+            getsecond(a, greaterVal);
+        }
+    }
+
+    public static boolean validateError(int[] ar){
+        int arLen = ar.length;
+		//System.out.println("Len: "+arLen);
+        if(arLen <= 0){
+            return true;
+        }
+        int count = 1;
+        for(int i=0; i<arLen-1; i++){
+			//System.out.println("check: "+ar[i]+ " - "+ ar[i+1]);
+            if(ar[i] == ar[i+1]){
+                count++; 
+            }
+        }
+       // System.out.println("count==arLen: "+count+" "+arLen);
+        if(count == arLen){
+            return true;
+        }
+        return false;
+    }
+
+    public static void getsecond(int[] a2, int b){
+        int a2Len = a2.length;
+        int secondLargest = a2[0];
+
+        for(int k=1; k<a2Len; k++){
+            if(a2[k] != b &&  secondLargest < a2[k]){
+                secondLargest = a2[k];
+            }
+        }
+        System.out.println(secondLargest);
+    }
+
+    public static void main(String[] args) {
+        // YOUR CODE GOES HERE
+        // Please take input and print output to standard input/output (stdin/stdout)
+        // DO NOT USE ARGUMENTS FOR INPUTS
+        // E.g. 'Scanner' for input & 'System.out' for output
+        Scanner sc = new Scanner(System.in);
+        int arrLen = sc.nextInt();
+        int[] arr = new int[arrLen];
+
+        for(int i=0; i<arrLen; i++){
+            arr[i] = sc.nextInt();
+        }
+
+        findLargestAndSecondLargestVal(arr);
+        
+    }
+}
