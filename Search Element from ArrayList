@@ -3,54 +3,57 @@ import java.util.*;
 
 public class Main {
 
-	public static boolean searchElement(ArrayList<Integer> arr, int b){
-		int arrSize = arr.size();
-		for(int i=0; i<arrSize; i++){
-			if(arr.get(i) == b){
-				return true;
-			}
-		}
-		return false;
-	}
+    public static boolean searchElementinArray(ArrayList<Integer> a, int b){
+        int aLen = a.size();
 
-	public static void printElement(ArrayList<Integer> arr, int b){
-		//System.out.println("Size: "+arr.size());
-		int arrSize = arr.size();
-		for(int i=0; i<arrSize; i++){
-			//System.out.print(arr.get(i)+" ");
+        for(int i=0; i<aLen; i++){
+            if(a.get(i) == b){
+                return true;
+            }
+        }
+        return false;
+    }
+
+	public static void printArray(ArrayList<Integer> arr){
+		int arrLen = arr.size();
+		for(int i=0; i<arrLen; i++){
+			System.out.print(arr.get(i)+" ");
 		}
+		System.out.println();
 	}
 
     public static void main(String[] args) {
+        // YOUR CODE GOES HERE
+        // Please take input and print output to standard input/output (stdin/stdout)
+        // DO NOT USE ARGUMENTS FOR INPUTS
+        // E.g. 'Scanner' for input & 'System.out' for output
         Scanner sc = new Scanner(System.in);
-        int T = sc.nextInt();
+        int T = sc.nextInt(); // number of test cases
         System.out.println("T: "+T);
-		
-        for(int i=1; i<=T; i++){
-            ArrayList<Integer> arr = new ArrayList<Integer>();
-			int arrLength = sc.nextInt();
-			System.out.println("Arr lenght: "+arrLength);
 
-			for(int j=0; j<arrLength; j++){
-				arr.add(sc.nextInt());
-			}
-			System.out.println("Array size: "+arr.size());
+    	for(int i=1; i<=T; i++){ // outer loop for test cases
+			ArrayList<Integer> arr = new ArrayList<Integer>(); // declaring Array list
 
-			int findVal = sc.nextInt();
-			System.out.println("Find value: "+findVal);
+            int arrLength = sc.nextInt(); // getting input of array lenght
+			System.out.println("arrLength: "+arrLength);
 
-
-			if(searchElement(arr,findVal)){
-				System.out.println("Result: "+1);
-			}
-			else{
-				System.out.println("Result: "+0);
-			}
+            for(int j=0; j<arrLength; j++){ // inner loop for arrat to add values
+                arr.add(sc.nextInt()); // adding value to array list from input
+            }
 			
-			printElement(arr,findVal);
 
-        }
+			printArray(arr);
 
-		
+            int findVal = sc.nextInt(); // getting input value which needs to be find in an array
+			System.out.println("findVal: "+findVal);
+
+            if(searchElementinArray(arr, findVal)){ // check point and function call will return boolean value
+                System.out.println(1); // if function return true then print 1
+            }
+            else{
+                System.out.println(0); // if function return flase then print 0
+            }
+        } 
+
     }
 }
