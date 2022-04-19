@@ -1,0 +1,47 @@
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+
+    public static void revArray(int[] A){
+        int ALen = A.length;
+        int[] revArr = new int[ALen];
+
+        int temp = A[0];
+        int index = 0;
+        for(int i=ALen-1; i>0; i--){
+            revArr[index] = A[i];
+            index++;
+        }
+		revArr[ALen-1] = temp;
+
+		PrintArray(revArr);
+    }
+
+	static void PrintArray(int[] arr){
+		int arrLen = arr.length;
+		for(int k=0; k<arrLen; k++){
+            System.out.print(arr[k]+" ");
+        }
+		System.out.println();
+	}
+
+   
+
+    public static void main(String[] args) {
+        // YOUR CODE GOES HERE
+        // Please take input and print output to standard input/output (stdin/stdout)
+        // DO NOT USE ARGUMENTS FOR INPUTS
+        // E.g. 'Scanner' for input & 'System.out' for output
+        Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+        int[] arr = new int[N];
+		int arrLen = arr.length;
+
+        for(int i=0; i<arrLen; i++){
+            arr[i] = sc.nextInt();
+        }
+
+        revArray(arr);
+    }
+}
