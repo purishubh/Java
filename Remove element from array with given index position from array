@@ -1,0 +1,43 @@
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+
+    public static void removeArrVal(int[] arr, int rVal){
+        int arrLen = arr.length;
+       	//System.out.println("ArrLen: "+arrLen);
+		
+        for(int i=rVal-1; i<arrLen; i++){
+                
+                for(int j=i; j<arrLen-1; j++){
+                    arr[j] = arr[j+1];
+                }
+                break;
+        }
+
+       	for(int k=0; k<arrLen-1; k++){
+            System.out.print(arr[k]+" ");
+        }
+        
+    }
+
+   
+
+    public static void main(String[] args) {
+        // YOUR CODE GOES HERE
+        // Please take input and print output to standard input/output (stdin/stdout)
+        // DO NOT USE ARGUMENTS FOR INPUTS
+        // E.g. 'Scanner' for input & 'System.out' for output
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int[] arr = new int[N];
+
+        for(int i=0; i<N; i++){
+            arr[i] = sc.nextInt();
+        }
+
+        int rVal = sc.nextInt(); 
+
+        removeArrVal(arr, rVal);
+    }
+}
