@@ -1,0 +1,52 @@
+import java.util.*;
+import java.lang.*;
+
+class Main {
+
+	static void calc1(int[][] A){
+        int R = A.length;
+        int C = A[0].length;
+        int[] arr = new int[R+C];
+
+        for(int i=0; i<R; i++){
+			int temp = 0;
+            for(int j=0; j<C; j++){
+                temp += A[i][j];
+            }
+            arr[i] = temp;
+        }
+
+       	int arrLen = R;
+        for(int k=0; k<C; k++){
+		   int temp2 = 0;
+            for(int l=0; l<R; l++){
+                temp2 += A[l][k];
+            }
+            arr[arrLen] = temp2;
+            arrLen++;
+        }
+		printArr(arr);
+	}
+
+	public static void printArr(int[] a){
+		for(int i=0; i<a.length; i++){
+			System.out.print(a[i]+" ");
+		}
+		System.out.println();
+	}
+
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		int r = sc.nextInt();
+		int c = sc.nextInt();
+		int[][] arr = new int[r][c];
+
+		for(int i=0; i<r; i++){
+			for(int j=0; j<c; j++){
+				arr[i][j] = sc.nextInt();
+			}
+		}
+
+		calc1(arr);
+	}
+}
