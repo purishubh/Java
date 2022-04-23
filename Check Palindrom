@@ -1,0 +1,41 @@
+import java.util.*;
+import java.lang.*;
+
+class Main {
+
+	static int checkPalindrom(String A){
+        int p1 = 0;
+        int p2 = A.length()-1;
+		System.out.println("A: "+A+", p1: "+p1+", p2: "+p2);
+
+        while(p1<p2){
+			if(A.charAt(p1) == A.charAt(p2)){
+				System.out.println("p1: "+p1+", p2: "+p2);
+				p1++;
+				p2--;
+			}
+			else{
+				return 0;
+			}
+        }
+        return 1;
+	}
+
+	public static void main(String args[]) {
+		// Your code goes here
+		Scanner sc = new Scanner(System.in);
+		String n = sc.nextLine();
+		//char ch = 'A';
+		//int val = ch;
+		//System.out.println(n);
+		//System.out.println(n.charAt(4));
+		//System.out.println("Vl: "+val);
+
+		if(checkPalindrom(n) == 1){
+			System.out.println("Palindrom");
+		}
+		else{
+			System.out.println("Not Palindrom");
+		}
+	}
+}
