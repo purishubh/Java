@@ -6,12 +6,17 @@ class Main {
 	public static void reverseSentance(String A){
 		String[] arr = A.split(" ");
 		int ALen = arr.length;
-		//System.out.println("ALen: "+ALen);
+		System.out.println("ALen: "+ALen);
 		String res = "";
 
 		for(int i=ALen-1; i>=0; i--){
 			//System.out.println("arr; "+arr[i]);
-			res += " "+arr[i];
+			if(i==0){ // here we put check coz in last we have extra space
+				res += arr[i];	
+			}
+			else{
+				res += arr[i] + " ";
+			}
 		}
 
 		System.out.println(res);
@@ -23,7 +28,6 @@ class Main {
 		String str = sc.nextLine();
 
 		reverseSentance(str);
-	
-		//System.out.println("sb: "+sb.substring(1,sb.length()-1));
+
 	}
 }
