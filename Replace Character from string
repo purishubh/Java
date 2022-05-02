@@ -1,0 +1,31 @@
+import java.util.*;
+
+class Main {
+
+	static void calc(String s, int v1, int v2){
+			char[] ch = s.toCharArray();
+
+			char a = (char)v1;
+			char b = (char)v2;
+			System.out.println("a: "+a+", b: "+b);
+
+			for(int i=0; i<ch.length; i++){
+				if(ch[i] == a){
+					//System.out.println("q: "+ch[i]);
+					ch[i] = b;
+				}
+			}
+			String res = String.valueOf(ch);
+				System.out.println(res);
+	}
+
+	public static void main(String args[]) {
+		// Your code goes here
+		Scanner sc = new Scanner(System.in);
+		String str = sc.next();
+		int val1 = sc.nextInt();
+		int val2 = sc.nextInt();
+
+		calc(str,val1,val2);
+	}
+}
