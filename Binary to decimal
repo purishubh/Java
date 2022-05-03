@@ -1,0 +1,29 @@
+import java.util.*;
+
+class Main {
+
+	static void findDeci(long n){
+		
+		long result = 0;
+		int multiply = 1;
+		while(n>0){
+
+			long temp = n%10;
+
+			result += temp*multiply;
+			multiply *= 2; 
+			n /= 10;
+
+		}
+		System.out.println(result);
+
+	}
+
+	public static void main(String args[]) {
+		// Your code goes here
+		Scanner sc = new Scanner(System.in);
+		long n = sc.nextLong();
+		
+		findDeci(n);
+	}
+}
