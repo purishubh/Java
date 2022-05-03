@@ -1,0 +1,135 @@
+import java.util.*;
+
+class Main {
+
+	static void printStar1(int n){
+		for(int i=0; i<n; i++){
+			for(int j=0; j<=i; j++){
+				System.out.print("*"+" ");
+			}
+			System.out.println();
+		}
+	}
+
+	static void printStar2(int n, int m){
+		for(int i=0; i<n; i++){
+			for(int j=0; j<m; j++){
+				System.out.print("*"+" ");
+			}
+			System.out.println();
+		}
+	}
+
+	static void printStar3(int n){
+		for(int i=0; i<n; i++){
+			for(int j=0; j<n-i ;j++){
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+
+	static void printStar4(int n){
+		for(int i=1; i<=n; i++){
+			for(int j=1; j<=i; j++){
+				if(j%2 == 0){
+					System.out.print(j+" ");
+				}
+				else{
+					System.out.print("*"+" ");
+				}
+			}
+			System.out.println();
+		}
+	}
+
+	static void printStar5(int n){
+
+		for(int i=1; i<=n; i++){
+
+			for(int j=1; j<=i; j++){
+				if(j%2 == 0){
+					System.out.print("*" + " ");
+				}
+				else{
+					System.out.print(j + " ");
+				}
+			}
+			System.out.println();
+		}
+	}
+
+	static void printStar6(int n){
+		for(int i=1; i<=n; i++){
+			for(int j=1; j<=n; j++){
+				if(j == 1 || j == n){
+					System.out.print("*" + " ");
+				}
+				else{
+					System.out.print(" " + " ");
+				}
+			}
+			System.out.println();
+		}
+	}
+
+	static void printStar7(int n){
+		for(int i=1; i<=n; i++){
+			System.out.print("*" + " ");
+
+			for(int j=1; j<=n-i; j++){
+				System.out.print("-" + " ");	
+			}
+			System.out.print("*" + " ");
+			System.out.println();
+		}
+	}
+
+	static void printStar8(int n){
+		for(int i=1; i<=n; i++){
+			
+			for(int s=1; s<=n-i; s++){
+				System.out.print("-" + " ");
+			}
+
+			for(int j=1; j<=i; j++){
+				System.out.print("*" + " ");	
+			}
+			System.out.println();
+		}
+	}
+
+	static void printStar9(int n){
+		for(int i=0; i<n; i++){
+			
+			for(int s=0; s<i; s++){
+				System.out.print("-" + " ");
+			}
+
+			for(int j=0; j<n-i; j++){
+				System.out.print("*" + " ");	
+			}
+			System.out.println();
+		}
+	}
+
+	public static void main(String args[]) {
+		// Your code goes here
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int n2 = sc.nextInt();
+
+
+		//printStar1(n);
+		//printStar2(n, n2);
+		//printStar3(n);
+		//printStar4(n);
+		//printStar5(n);
+		//printStar6(n);
+		//printStar7(n);
+		//printStar8(n);
+		printStar9(n);
+
+
+	}
+}
