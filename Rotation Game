@@ -1,0 +1,31 @@
+import java.util.*;
+
+class Main {
+
+	static void rotateTillB(int[] arr, int val){
+		int arrLen = arr.length; // array length
+		val = val%arrLen; // it will return the last rotation value
+
+		for(int i=arrLen-val; i<arrLen; i++){ // outer loop will run for first rotation part
+			System.out.print(arr[i]+" ");
+		}
+		for(int j=0; j<arrLen-val; j++){ //  this outer loop run for remaining value 
+			System.out.print(arr[j]+" ");
+		}
+	}
+
+	public static void main(String args[]) { 
+		// Your code goes here
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int[] arr = new int[n];
+
+		for(int i=0; i<n; i++){
+			arr[i] = sc.nextInt();
+		}
+
+		int val = sc.nextInt();
+
+		rotateTillB(arr, val);
+	}
+}
