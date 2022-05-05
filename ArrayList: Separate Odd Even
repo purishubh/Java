@@ -1,0 +1,53 @@
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+
+    static void separateEvenOdd(ArrayList<Integer> a){
+        int aLen = a.size();
+		ArrayList<Integer> evenArr = new ArrayList<Integer>();
+		ArrayList<Integer> oddArr = new ArrayList<Integer>();
+        //System.out.println("length: "+aLen);
+
+		for(int i=0; i<aLen; i++){
+			if(a.get(i)%2 == 0){
+				evenArr.add(a.get(i));
+			}
+			else{
+				oddArr.add(a.get(i));
+			}
+		}
+		//printArray(a);
+		printArray(oddArr);
+		printArray(evenArr);
+    }
+
+	static void printArray(ArrayList<Integer> arr){
+		//System.out.println();
+		int arrLen = arr.size();
+		for(int i=0; i<arrLen; i++){
+			System.out.print(arr.get(i) + " ");
+		}
+		System.out.println();
+	}
+
+    public static void main(String[] args) {
+        // YOUR CODE GOES HERE
+        // Please take input and print output to standard input/output (stdin/stdout)
+        // DO NOT USE ARGUMENTS FOR INPUTS
+        // E.g. 'Scanner' for input & 'System.out' for output
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+
+        for(int s=0; s<T; s++){
+			int n = sc.nextInt();
+			ArrayList<Integer> arr = new ArrayList<Integer>();
+
+			for(int i=0; i<n; i++){
+				arr.add(sc.nextInt());
+			}
+
+			separateEvenOdd(arr);
+		}
+    }
+}
