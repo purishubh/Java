@@ -1,0 +1,50 @@
+import java.util.*;
+
+class Main {
+
+	public static int solve(int[] A) {
+        int ALen = A.length;
+        int minOdd = Integer.MAX_VALUE;
+        int maxEven = Integer.MIN_VALUE;
+	
+        for(int i=0; i<ALen; i++){
+            if(A[i]%2 == 0){
+                if(maxEven < A[i]){
+                    maxEven = A[i];
+					System.out.print("maxEven: "+maxEven+" ");
+                }
+            }
+            else{
+                if(minOdd > A[i]){
+                    minOdd = A[i];
+					System.out.print("minOdd: "+minOdd+" ");
+                }
+            }
+        }
+		
+		System.out.println("maxEven: "+maxEven+", minOdd: "+minOdd);
+        return maxEven - minOdd;
+    }
+
+	static void printArray(int[] a){
+		System.out.println();
+		for(int i=0; i<a.length; i++){
+			System.out.print(a[i] + " ");
+		}
+		System.out.println();
+	}	
+
+
+	public static void main(String args[]) {
+		// Your code goes here
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int[] arr = new int[n];
+
+		for(int i=0; i<n; i++){
+			arr[i] = sc.nextInt();
+		}
+
+		System.out.println(solve(arr));
+	}
+}
