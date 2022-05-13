@@ -1,0 +1,43 @@
+import java.util.*;
+import java.lang.*;
+
+class Main {
+
+	static void calc(int[][] mat){ 
+		int r = mat.length; // row length
+		int c = mat[0].length; /// column length
+		
+		for(int i=0; i<c; i++){ // loop  till column length, row is fixed
+			printDiagonal(mat, 0, i); // call printDiamgonal function
+		}
+
+		for(int j=1; j<r; j++){ // loop till row length, column is fixed
+			printDiagonal(mat, j, c-1); call printDiamgonal function
+		}
+	}
+
+	static void printDiagonal(int[][] mat, int i, int j){ // function to print single diagonal 
+		while(i<mat.length && j>=0){ // loop 
+			System.out.print(mat[i][j] + " "); // print diagonal
+			i++; // 'i' increment i by 1;
+			j--; // 'j' decrement by 1;
+		}
+		System.out.println(); // new line
+	}
+  
+	public static void main(String args[]) {
+		// Your code goes here
+		Scanner sc = new Scanner(System.in);
+		int r = sc.nextInt(); // row length
+		int c = sc.nextInt(); // column length
+		int[][] mat = new int[r][c]; // decalre 2D array
+
+		for(int i=0; i<r; i++){ // outer loop
+			for(int j=0; j<c; j++){ // inner loop
+				mat[i][j] = sc.nextInt(); // read from input
+			}
+		}
+    
+		calc(mat); // call calc function
+	}
+}
