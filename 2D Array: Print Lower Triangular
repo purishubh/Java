@@ -1,0 +1,34 @@
+// 2D Array: Print Lower Triangular
+import java.util.*;
+import java.lang.*;
+
+class Main {
+
+	static void printLowerTriangular(int[][] mat){
+		int r = mat.length;
+		int c = mat[0].length;	
+		//System.out.println("r:"+r+", c:"+c);
+		for(int i=0; i<r; i++){
+			for(int j=0; j<=i; j++){
+				System.out.print(mat[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+
+	public static void main(String args[]) {
+		// Your code goes here
+		Scanner sc = new Scanner(System.in);
+		int r = sc.nextInt();
+		int c = sc.nextInt();
+		int[][] mat = new int[r][c];
+
+		for(int i=0; i<r; i++){
+			for(int j=0; j<c; j++){
+				mat[i][j] = sc.nextInt();
+			}
+		}
+    
+		printD(mat);
+	}
+}
