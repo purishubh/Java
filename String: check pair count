@@ -1,0 +1,34 @@
+import java.util.*;
+import java.lang.*;
+
+class Main {
+
+	static void findCount(String s, String fs){
+		int n = s.length();
+		char[] str = s.toCharArray(); // convert string to character array
+		System.out.println("String:"+str+", findChar:"+fs);	
+		int count = 0; // count variable to count the pattern repetation
+
+		for(int i=0; i<n; i++){ // outer loop
+			//System.out.print(str[i]+" "); 
+			if(str[i] == 'A'){ // condition check for first character
+				for(int j=i+1; j<n; j++){ // inner loop
+					if(str[j] == 'G'){ // condition check 
+						count++; // increment count
+					}
+				}
+			}
+		}
+		System.out.println("count:"+count); // print count
+	}
+
+	public static void main(String args[]) {
+		// Your code goes here
+		Scanner sc = new Scanner(System.in);
+		String str = sc.next();
+		String findChar = sc.next();
+
+
+		findCount(str, findChar); 
+	}
+}
