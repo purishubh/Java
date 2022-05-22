@@ -1,0 +1,48 @@
+import java.util.*;
+import java.lang.*;
+
+class Main {
+
+	static void calc(int[] arr1, int[] arr2){
+		int n = arr1.length;
+		//printArray(arr1);
+		//printArray(arr2);
+		int[] res = new int[n];
+
+		int carry = 0;
+		for(int i=n-1; i>=0; i--){
+
+			int add = arr1[i] + arr2[i];
+			int mod = add%10 + carry;
+			res[i] = mod;
+			carry = add/10;
+			//System.out.println("mod:"+mod+", carry:"+carry+", res:"+res[i]);
+		}
+		printArray(res);
+	}
+
+	static void printArray(int[] arr){
+		for(int i=0; i<arr.length; i++){
+			System.out.print(arr[i]+" ");
+		}
+		System.out.println();
+	}
+
+	public static void main(String args[]) {
+		// Your code goes here
+		Scanner sc = new Scanner(System.in);
+		int n1 = sc.nextInt();
+		int[] arr1 = new int[n1];
+		for(int i=0; i<n1; i++){
+			arr1[i] = sc.nextInt(); 
+		}
+
+		int n2 = sc.nextInt();
+		int[] arr2 = new int[n2];
+		for(int j=0; j<n2; j++){
+			arr2[j] = sc.nextInt(); 
+		}
+
+		calc(arr1,arr2);
+	}
+}
