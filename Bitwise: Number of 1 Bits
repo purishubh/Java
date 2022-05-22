@@ -1,0 +1,36 @@
+import java.util.*;
+import java.lang.*;
+
+class Main {
+
+	static void couuntBits(int n){
+		int count = 0; // variable to count set(1) bits
+
+		for(int i=0; i<n; i++){
+			if(checkBit(n, i)){ // check point for bit is set(1) or unset(0)
+				count++; // increment count if bit is set(1)
+			}	
+		}
+		System.out.println("count:"+count); // print the count of number of set bits.
+	}
+
+	static boolean checkBit(int n, int i){ // function to check each check bit is set(1) or unset(0)
+		if(((n>>i)&1) == 1){ //right shift and 1 == 1
+			//System.out.println("true: "+((n>>i)&1));	
+			return true;
+		}
+		else{
+			//System.out.println("false: "+((n>>i)&1));	
+			return false;
+		}
+	}
+
+	public static void main(String args[]) {
+		// Your code goes here
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+
+		
+		couuntBits(n);
+	}
+}
