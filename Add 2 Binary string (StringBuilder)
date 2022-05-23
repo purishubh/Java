@@ -1,0 +1,48 @@
+import java.util.*;
+import java.lang.*;
+
+class Main {
+
+	static void calc(String A, String B){
+		StringBuilder str1 = new StringBuilder(A); 
+		StringBuilder str2 = new StringBuilder(B);
+		int ALen = str1.length();
+		int BLen = str2.length();
+		StringBuilder res = new StringBuilder();
+		int carry = 0;
+		int i = 0;
+
+		while(i<ALen || i<BLen || carry != 0){ // check length of both length and carry
+			int x = 0;
+			if(i<ALen && str1.charAt(ALen-1-i) == '1') x = 1; // checking bit if 1 then set x ==1
+			int y = 0;
+			if(i<BLen && str2.charAt(BLen-1-i) == '1') y = 1;  // checking bit if 1 then set y ==1
+			int add = x + y + carry; // adding both bits with carry 
+			int mod = add%2; // getting mod value
+			res.insert(i, mod); // insert into res var
+			carry = add/2; // getting carry
+			i++; // incremented i value
+		}
+		
+		// reverse String
+		for(int j=0; j<res.length()/2; j++){
+			int front = j; // 0th index
+			int back = res.length()-1-j; // last index 
+			char frontChar = res.charAt(front); // character from front
+			char backChar = res.charAt(back); // character from back
+			//System.out.println("frontChar:"+frontChar+", backChar:"+backChar);
+			res.setCharAt(front, backChar); // swap back char to front
+			res.setCharAt(back, frontChar); // swap front char to back
+		}
+		System.out.println("res:"+res); // print res (result)
+	}
+
+	public static void main(String args[]) {
+		// Your code goes here
+		Scanner sc = new Scanner(System.in);
+		String str1 = sc.next();
+		String str2 = sc.next();
+
+		calc(str1, str2);
+	}
+}
