@@ -1,0 +1,22 @@
+import java.util.*;
+import java.lang.*;
+
+class Main {
+	public static void main(String args[]) {
+		// Your code goes here
+		Scanner sc = new Scanner(System.in);
+		int n1 = sc.nextInt();
+		int n2 = sc.nextInt();
+	
+		int ANDOperator = (n1 & n2); // And
+		int OROperator = (n1 | n2); // Or
+		int XOROperator = (n1 ^ n2); // XOR (Exclusice or)
+		int NegationOperator = ( ~n2 ); // Negation
+    
+    // printing values
+		System.out.println("AND Operator: " + ANDOperator);
+		System.out.println("OR Operator: " + OROperator);
+		System.out.println("XOR Operator: " + XOROperator);
+		System.out.println("Negation Operator: " + NegationOperator);
+	}
+}
