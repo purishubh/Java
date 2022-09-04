@@ -1,0 +1,42 @@
+import java.util.*;
+import java.lang.*;
+
+
+
+class Main {
+	
+	static class Node{ // Node class
+		int data; // data member of node class
+		Node next; // member of node calss which store then next node addrss 
+		
+		public Node(int x){ // Constructor
+			this.data = x; 
+			this.next = null;
+		}
+	}
+	  
+	
+	public static void main(String args[]) {
+		// Your code goes here    
+        Scanner sc = new Scanner(System.in);
+		int s1 = sc.nextInt(); // Input valuse from user
+		int s2 = sc.nextInt(); // Input valuse from user
+		int s3 = sc.nextInt(); // Input valuse from user
+		int s4 = sc.nextInt(); // Input valuse from user
+		int s5 = sc.nextInt(); // Input valuse from user
+		
+		Node h1 = new Node(s1); // Assigning input value to object instance
+		Node h2 = new Node(s2); // Assigning input value to object instance
+		Node h3 = new Node(s3); // Assigning input value to object instance
+		Node h4 = new Node(s4); // Assigning input value to object instance
+		Node h5 = new Node(s5); // Assigning input value to object instance
+		
+		
+		
+		System.out.println(h1.data); // Printing data
+		System.out.println(h2.data); // Printing data
+		System.out.println(h3.data); // Printing data
+		System.out.println(h4.data); // Printing data
+		System.out.println(h5.data); // Printing data
+	}
+}
