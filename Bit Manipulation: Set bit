@@ -1,0 +1,14 @@
+import java.util.*;
+
+public class Bit_SetBit_demo {
+    public static void main(String args[]) throws Exception{
+    
+        int n = 5; // 0101
+        int pos = 1; 
+        int bitMask = 1<<pos; // shifted 1 bit to till 1nd position 
+        
+        int result = n | bitMask; // checking with OR condition
+        // we are using OR coz we have to set bit on 1st position of n (5: 0101 )
+        System.out.print(result); // (0111)
+    }    
+}
