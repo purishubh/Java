@@ -1,0 +1,28 @@
+// Update the 2nd bit (position = 2) of a number to 1. (n = 0101)
+
+import java.util.*;
+
+public class Bit_Update_demo {
+    public static void main(String args[]) throws Exception{
+        /*  Update Operation
+            1 = set
+            0 = clear(unset) 
+        */
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int position = sc.nextInt(); // From which position need to perform operation(set/ unset)
+        int operation = sc.nextInt(); // which operation to perform set or unset
+
+        int bitMask = 1<<position;
+        
+        if(operation == 1){ // if input operation 1 means set bit for input position
+            int result = bitMask | n; // to set bit 
+            System.out.print("Result woith operation "+operation+" : "+result); // output result
+        }
+        else{
+            int notBitMask = ~(bitMask); // negation of bitmask
+            int result = notBitMask & n; // to unset bit
+            System.out.print("Result woith operation "+operation +" : "+result); // output result
+        }
+    }
+}
