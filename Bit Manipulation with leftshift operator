@@ -1,0 +1,17 @@
+import java.util.*; // impoted libraby
+
+public class Bit_LeftShift_demo { // class
+    public static void main(String[] args) throws Exception { // main method
+
+        int n = 5; // define variable and assign value
+        int pos = 2; // define variable and assign value
+        int bitMask = 1<<pos; // // define variable and uses leftshift operator (it will shift bits pos time to left)
+
+        if( (n & bitMask) == 0 ){ // if bitmask and n value 
+            System.out.print("Bit is zero"); // print output
+        }
+        else{
+            System.out.print("Bit is one"); // print output
+        }
+    }
+}
