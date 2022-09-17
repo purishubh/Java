@@ -1,0 +1,14 @@
+import java.util.*; // import java library
+;
+public class Bit_ClearBit_demo { 
+    public static void main(String args[]) throws Exception{
+
+        int n = 5; // 0101
+        int pos = 2; // position to shift
+        int bitMask = 1<<pos; // left shift with 2 position (0100)
+        int notBitMask = ~(bitMask); // negation of bitmask (1011)
+
+        int result = notBitMask & n; // (1011) & (0101)
+        System.out.println(result); // (0001)
+    }    
+}
